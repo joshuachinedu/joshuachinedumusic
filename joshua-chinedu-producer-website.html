@@ -1,0 +1,1829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Official website of Joshua Chinedu, globally recognized music producer, label founder, and educator.">
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="author" content="Joshua Chinedu">
+    <meta name="copyright" content="© 2026 Joshua Chinedu. All Rights Reserved.">
+    <meta property="og:title" content="Joshua Chinedu - Globally Recognized Music Producer">
+    <meta property="og:description" content="Official website of Joshua Chinedu, globally recognized music producer, label founder, and educator.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Joshua Chinedu - Globally Recognized Music Producer">
+    <meta name="twitter:description" content="Official website of Joshua Chinedu, globally recognized music producer, label founder, and educator.">
+    <title>Joshua Chinedu - Globally Recognized Music Producer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght:700;900&family=Archivo:wght:400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #0a0a0f;
+            --color-surface: #12121a;
+            --color-text: #e8e8f0;
+            --color-text-dim: #9898a8;
+            --color-accent: #00d9ff;
+            --color-accent-glow: rgba(0, 217, 255, 0.3);
+            --font-display: 'Orbitron', sans-serif;
+            --font-body: 'Archivo', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: rgba(0, 217, 255, 0.2);
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--color-text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0a0a0f 100%);
+            animation: heroZoom 8s ease-out forwards;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, var(--color-accent-glow) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(138, 43, 226, 0.2) 0%, transparent 50%);
+            animation: heroBlur 3s ease-out forwards;
+        }
+
+        @keyframes heroZoom {
+            0% {
+                transform: scale(1.2);
+                filter: blur(20px);
+            }
+            60% {
+                filter: blur(0px);
+            }
+            100% {
+                transform: scale(1);
+                filter: blur(0px);
+            }
+        }
+
+        @keyframes heroBlur {
+            0% {
+                opacity: 1;
+                filter: blur(40px);
+            }
+            100% {
+                opacity: 0.6;
+                filter: blur(0px);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            animation: fadeInUp 1.2s ease-out 0.5s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 900;
+            letter-spacing: 8px;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--color-accent) 0%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin-bottom: 3rem;
+            color: var(--color-text-dim);
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            display: inline-block;
+            min-height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: var(--color-accent);
+            color: var(--color-bg);
+            box-shadow: 0 0 30px var(--color-accent-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px var(--color-accent-glow);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-text);
+            border: 2px solid var(--color-text);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-text);
+            color: var(--color-bg);
+            transform: translateY(-3px);
+        }
+
+        .social-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            animation: fadeInUp 1.2s ease-out 1s both;
+        }
+
+        .social-item {
+            text-align: center;
+            text-decoration: none;
+            color: var(--color-text-dim);
+            transition: all 0.3s ease;
+            padding: 1rem;
+            min-width: 90px;
+            flex: 0 1 auto;
+        }
+
+        .social-item:hover {
+            color: var(--color-accent);
+            transform: translateY(-5px);
+        }
+
+        .social-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .social-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Page Container */
+        .page {
+            min-height: 100vh;
+            padding: 8rem 2rem 4rem;
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+            animation: pageIn 0.6s ease-out;
+        }
+
+        @keyframes pageIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-header h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 900;
+            letter-spacing: 4px;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: var(--color-text-dim);
+            letter-spacing: 2px;
+        }
+
+        /* About Page */
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 2;
+            font-size: 1.1rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+        }
+
+        /* Music & Videos Pages */
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .platform-card {
+            background: var(--color-surface);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 20px;
+            text-decoration: none;
+            color: var(--color-text);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .platform-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 217, 255, 0.2);
+            border-color: var(--color-accent);
+        }
+
+        .platform-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .platform-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Tours Page */
+        .tour-table {
+            width: 100%;
+            background: var(--color-surface);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            overflow-x: auto;
+        }
+
+        .tour-table table {
+            width: 100%;
+            min-width: 600px;
+        }
+
+        .tour-table th,
+        .tour-table td {
+            padding: 1.5rem;
+            text-align: left;
+        }
+
+        .tour-table th {
+            background: rgba(0, 217, 255, 0.1);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            color: var(--color-accent);
+        }
+
+        .tour-table tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .tour-table tbody tr:hover {
+            background: rgba(0, 217, 255, 0.05);
+        }
+
+        .tour-table a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Press Page */
+        .press-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .press-item {
+            background: var(--color-surface);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .press-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-accent);
+        }
+
+        .press-item h3 {
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .press-item p {
+            color: var(--color-text-dim);
+            margin-bottom: 1rem;
+        }
+
+        .press-item a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* GetMusic Records */
+        .label-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .label-logo {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            color: var(--color-accent);
+            margin-bottom: 2rem;
+            letter-spacing: 4px;
+        }
+
+        .label-content p {
+            font-size: 1.2rem;
+            line-height: 2;
+            color: var(--color-text-dim);
+        }
+
+        /* Collaborations */
+        .collab-grid {
+            display: grid;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .collab-category {
+            background: var(--color-surface);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .collab-category h3 {
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .collab-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .collab-item {
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .collab-item:hover {
+            background: rgba(0, 217, 255, 0.1);
+        }
+
+        /* Brands */
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .brand-item {
+            aspect-ratio: 1;
+            background: var(--color-surface);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .brand-item:hover {
+            transform: scale(1.05);
+            border-color: var(--color-accent);
+        }
+
+        /* Merchandise */
+        .merch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .merch-card {
+            background: var(--color-surface);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .merch-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 217, 255, 0.2);
+        }
+
+        .merch-image {
+            width: 100%;
+            height: 300px;
+            background: rgba(0, 217, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .merch-info {
+            padding: 1.5rem;
+        }
+
+        .merch-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .merch-price {
+            color: var(--color-accent);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .store-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        /* Learn Page */
+        .learn-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 1rem 2rem;
+            background: var(--color-surface);
+            border: 2px solid rgba(255, 255, 255, 0.05);
+            color: var(--color-text);
+            cursor: pointer;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            background: var(--color-accent);
+            color: var(--color-bg);
+            border-color: var(--color-accent);
+        }
+
+        .tab-btn:hover {
+            border-color: var(--color-accent);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .course-card {
+            background: var(--color-surface);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .course-card h4 {
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .course-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .course-card li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .course-card a {
+            color: var(--color-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .course-card a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Contact Page */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-section {
+            background: var(--color-surface);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .contact-section h3 {
+            color: var(--color-accent);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-label {
+            color: var(--color-text-dim);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-value {
+            color: var(--color-text);
+            font-size: 1.1rem;
+        }
+
+        .contact-value a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        .contact-value a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-socials {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .contact-social {
+            font-size: 3rem;
+            color: var(--color-text-dim);
+            transition: all 0.3s ease;
+            flex: 0 1 auto;
+        }
+
+        .contact-social:hover {
+            color: var(--color-accent);
+            transform: scale(1.2);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem;
+            }
+
+            .nav-brand {
+                font-size: 1rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 60px);
+                background: rgba(10, 10, 15, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 2rem 1rem;
+                gap: 0.5rem;
+                transition: left 0.3s ease;
+                overflow-y: auto;
+            }
+
+            .nav-links a {
+                padding: 0.75rem;
+                font-size: 0.85rem;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+
+            .hero-subtitle {
+                font-size: 0.9rem;
+                letter-spacing: 2px;
+                margin-bottom: 2rem;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+                width: 100%;
+                max-width: 280px;
+                gap: 1rem;
+                margin-bottom: 3rem;
+            }
+
+            .btn {
+                padding: 0.9rem 2rem;
+                font-size: 0.85rem;
+                width: 100%;
+            }
+
+            .social-grid {
+                gap: 1rem;
+                max-width: 100%;
+                padding: 0 1rem;
+            }
+
+            .social-item {
+                min-width: 70px;
+                padding: 0.75rem 0.5rem;
+            }
+
+            .social-icon {
+                font-size: 1.5rem;
+            }
+
+            .social-label {
+                font-size: 0.65rem;
+            }
+
+            .page {
+                padding: 6rem 1rem 3rem;
+            }
+
+            .container {
+                padding: 0 0.5rem;
+            }
+
+            .page-header {
+                margin-bottom: 2rem;
+            }
+
+            .page-header h2 {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .about-content {
+                font-size: 1rem;
+                line-height: 1.8;
+            }
+
+            .platform-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .platform-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .platform-icon {
+                font-size: 2.5rem;
+            }
+
+            .platform-name {
+                font-size: 1.1rem;
+            }
+
+            .tour-table {
+                border-radius: 10px;
+            }
+
+            .tour-table table {
+                min-width: 500px;
+            }
+
+            .tour-table th,
+            .tour-table td {
+                padding: 1rem 0.75rem;
+                font-size: 0.85rem;
+                white-space: nowrap;
+            }
+
+            .press-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .press-item {
+                padding: 1.5rem;
+            }
+
+            .label-logo {
+                font-size: 2rem;
+            }
+
+            .label-content p {
+                font-size: 1rem;
+            }
+
+            .collab-grid {
+                gap: 1.5rem;
+            }
+
+            .collab-category {
+                padding: 1.5rem;
+            }
+
+            .collab-category h3 {
+                font-size: 1.2rem;
+            }
+
+            .collab-list {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+
+            .brand-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .merch-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .merch-image {
+                height: 250px;
+            }
+
+            .merch-info {
+                padding: 1.25rem;
+            }
+
+            .learn-tabs {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .tab-btn {
+                padding: 0.9rem 1.5rem;
+                font-size: 0.85rem;
+                width: 100%;
+            }
+
+            .course-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .course-card {
+                padding: 1.5rem;
+            }
+
+            .course-card h4 {
+                font-size: 1.1rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .contact-section h3 {
+                font-size: 1.3rem;
+            }
+
+            .contact-socials {
+                gap: 2rem;
+            }
+
+            .contact-social {
+                font-size: 2.5rem;
+            }
+
+            .contact-item {
+                margin-bottom: 1.25rem;
+            }
+
+            .contact-value {
+                font-size: 1rem;
+                word-break: break-word;
+            }
+        }
+
+        /* Extra small mobile devices */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+                letter-spacing: 1px;
+            }
+
+            .hero-subtitle {
+                font-size: 0.8rem;
+            }
+
+            .social-item {
+                min-width: 60px;
+            }
+
+            .page-header h2 {
+                font-size: 1.75rem;
+            }
+
+            .brand-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-socials {
+                gap: 1.5rem;
+            }
+
+            .contact-social {
+                font-size: 2rem;
+            }
+        }
+
+        /* Utility */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-surface);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 3rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--color-accent);
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--color-text-dim);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: var(--color-accent);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .copyright {
+            color: var(--color-text-dim);
+            font-size: 0.85rem;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-legal a {
+            color: var(--color-text-dim);
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-legal a:hover {
+            color: var(--color-accent);
+        }
+
+        @media (max-width: 768px) {
+            footer {
+                padding: 2rem 1rem 1.5rem;
+                margin-top: 3rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-legal {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-brand" data-page="home">JC</a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" data-page="home">Home</a></li>
+                <li><a href="#" data-page="about">About</a></li>
+                <li><a href="#" data-page="music">Music</a></li>
+                <li><a href="#" data-page="videos">Videos</a></li>
+                <li><a href="#" data-page="tours">Tours</a></li>
+                <li><a href="#" data-page="press">Press</a></li>
+                <li><a href="#" data-page="label">GetMusic Records</a></li>
+                <li><a href="#" data-page="collaborations">Collaborations</a></li>
+                <li><a href="#" data-page="brands">Brands</a></li>
+                <li><a href="#" data-page="merchandise">Merchandise</a></li>
+                <li><a href="#" data-page="learn">Learn</a></li>
+                <li><a href="#" data-page="contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <h1>JOSHUA CHINEDU</h1>
+                <p class="hero-subtitle">Globally Recognized Music Producer</p>
+                <div class="hero-ctas">
+                    <a href="#" class="btn btn-primary" data-page="music">Listen</a>
+                    <a href="#" class="btn btn-secondary" data-page="videos">Watch</a>
+                    <a href="#" class="btn btn-secondary" data-page="contact">Contact</a>
+                </div>
+                <div class="social-grid">
+                    <a href="https://youtube.com" target="_blank" class="social-item">
+                        <span class="social-icon">▶</span>
+                        <span class="social-label">YouTube</span>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="social-item">
+                        <span class="social-icon">𝕏</span>
+                        <span class="social-label">Twitter</span>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" class="social-item">
+                        <span class="social-icon">f</span>
+                        <span class="social-label">Facebook</span>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="social-item">
+                        <span class="social-icon">◉</span>
+                        <span class="social-label">Instagram</span>
+                    </a>
+                    <a href="https://tiktok.com" target="_blank" class="social-item">
+                        <span class="social-icon">♪</span>
+                        <span class="social-label">TikTok</span>
+                    </a>
+                    <a href="https://ra.co" target="_blank" class="social-item">
+                        <span class="social-icon">RA</span>
+                        <span class="social-label">Resident Advisor</span>
+                    </a>
+                    <a href="https://discogs.com" target="_blank" class="social-item">
+                        <span class="social-icon">◆</span>
+                        <span class="social-label">Discogs</span>
+                    </a>
+                    <a href="https://threads.net" target="_blank" class="social-item">
+                        <span class="social-icon">@</span>
+                        <span class="social-label">Threads</span>
+                    </a>
+                    <a href="https://discord.com" target="_blank" class="social-item">
+                        <span class="social-icon">◈</span>
+                        <span class="social-label">Discord</span>
+                    </a>
+                    <a href="https://twitch.tv" target="_blank" class="social-item">
+                        <span class="social-icon">◐</span>
+                        <span class="social-label">Twitch</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h2>ABOUT</h2>
+                <p>The Story Behind the Sound</p>
+            </div>
+            <div class="about-content">
+                <p>Joshua Chinedu is a globally recognized music producer, composer, and sound designer whose work transcends genres and borders. With a career spanning over a decade, he has established himself as a pioneering force in contemporary music production, blending electronic, Afrobeats, Christian, and R&B influences into a signature sound that resonates worldwide.</p>
+                
+                <p>Born with an innate passion for music, Joshua's journey began with classical piano training, which laid the foundation for his deep understanding of music theory and composition. This traditional background, combined with his forward-thinking approach to production, has allowed him to create music that is both technically sophisticated and emotionally powerful.</p>
+                
+                <p>As the founder of GetMusic Records, Joshua has created a platform for unique global artists to share their vision with the world. The label specializes in releasing cutting-edge Christian, Afrobeats, and R&B music that pushes boundaries while maintaining artistic integrity.</p>
+                
+                <p>Beyond production, Joshua is a dedicated educator who shares his knowledge through comprehensive online courses in music production and piano. His teaching philosophy emphasizes both technical mastery and creative expression, empowering students to develop their own unique voice in music.</p>
+                
+                <p>Joshua's work has been featured in major film productions, fashion campaigns, and music conferences worldwide. His collaborations span industries, working with leading fashion brands, movie production houses, and industry executives who recognize his innovative approach to sound.</p>
+                
+                <p>Whether producing tracks in his state-of-the-art studio, performing live at international festivals, or mentoring the next generation of producers, Joshua Chinedu continues to shape the future of music with passion, precision, and purpose.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MUSIC PAGE -->
+    <div id="music" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h2>MUSIC</h2>
+                <p>Listen to Joshua Chinedu — Choose Your Music Service</p>
+            </div>
+            <div class="platform-grid">
+                <a href="https://open.spotify.com" target="_blank" class="platform-card">
+                    <span class="platform-icon">♫</span>
+                    <div class="platform-name">Spotify</div>
+                </a>
+                <a href="https://music.apple.com" target="_blank" class="platform-card">
+                    <span class="platform-icon">🎵</span>
+                    <div class="platform-name">Apple Music</div>
+                </a>
+                <a href="https://youtube.com/music" target="_blank" class="platform-card">
+                    <span class="platform-icon">▶</span>
+                    <div class="platform-name">YouTube Music</div>
+                </a>
+                <a href="https://soundcloud.com" target="_blank" class="platform-card">
+                    <span class="platform-icon">☁</span>
+                    <div class="platform-name">SoundCloud</div>
+                </a>
+                <a href="https://deezer.com" target="_blank" class="platform-card">
+                    <span class="platform-icon">🎧</span>
+                    <div class="platform-name">Deezer</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIDEOS PAGE -->
+    <div id="videos" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h2>VIDEOS</h2>
+                <p>Watch on Your Preferred Platform</p>
+            </div>
+            <div class="platform-grid">
+                <a href="https://youtube.com" target="_blank" class="platform-card">
+                    <span class="platform-icon">▶</span>
+                    <div class="platform-name">YouTube</div>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="platform-card">
+                    <span class="platform-icon">◉</span>
+                    <div class="platform-name">Instagram</div>
+                </a>
+                <a href="https://facebook.com" target="_blank" class="platform-card">
+                    <span class="platform-icon">f</span>
+                    <div class="platform-name">Facebook</div>
+                </a>
+                <a href="https://tiktok.com" target="_blank" class="platform-card">
+                    <span class="platform-icon">♪</span>
+                    <div class="platform-name">TikTok</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOURS PAGE -->
+    <div id="tours" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h2>TOURS</h2>
+                <p>Upcoming Performances & Events</p>
+            </div>
+            <div class="tour-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>City</th>
+                            <th>Country</th>
+                            <th>Event / Festival</th>
+                            <th>Tickets</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mar 15, 2026</td>
+                            <td>Lagos</td>
+                            <td>Nigeria</td>
+                            <td>Afrobeat Festival</td>
+                            <td><a href="#">Get Tickets</a></td>
+                        </tr>
+                        <tr>
+                            <td>Apr 22, 2026</td>
+                            <td>London</td>
+                            <td>UK</td>
+                            <td>Electronic Music Conference</td>
+                            <td><a href="#">Get Tickets</a></td>
+                        </tr>
+                        <tr>
+                            <td>May 10, 2026</td>
+                            <td>New York</td>
+                            <td>USA</td>
+                            <td>Brooklyn Music Hall</td>
+                            <td><a href="#">Get Tickets</a></td>
+                        </tr>
+                        <tr>
+                            <td>Jun 5, 2026</td>
+                            <td>Amsterdam</td>
+                            <td>Netherlands</td>
+                            <td>ADE Festival</td>
+                            <td><a href="#">Get Tickets</a></td>
+                        </tr>
+                        <tr>
+                            <td>Jul 18, 2026</td>
+                            <td>Accra</td>
+                            <td>Ghana</td>
+                            <td>Afrochella</td>
+                            <td><a href="#">Get Tickets</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRESS PAGE -->
+    <div id="press" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h2>PRESS</h2>
+                <p>Media, Interviews & Features</p>
+            </div>
+            <div class="press-grid">
+                <div class="press-item">
+                    <h3>Billboard Interview</h3>
+                    <p>Joshua Chinedu discusses his unique approach to blending Afrobeats with electronic music.</p>
+                    <a href="#">Read More →</a>
+                </div>
+                <div class="press-item">
+                    <h3>Electronic Music Podcast</h3>
+                    <p>An in-depth conversation about music production, creativity, and the future of sound.</p>
+                    <a href="#">Listen Now →</a>
+                </div>
+                <div class="press-item">
+                    <h3>Studio Session Behind the Scenes</h3>
+                    <p>Exclusive look at Joshua's creative process in the studio.</p>
+                    <a href="#">Watch Video →</a>
+                </div>
+                <div class="press-item">
+                    <h3>Music Conference Keynote</h3>
+                    <p>Speaking on the evolution of global music production at the International Music Summit.</p>
+                    <a href="#">View Highlights →</a>
+                </div>
+                <div class="press-item">
+                    <h3>Collaboration Spotlight</h3>
+                    <p>Featured work with major fashion brands and film productions.</p>
+                    <a href="#">Explore →</a>
+                </div>
+                <div class="press-item">
+                    <h3>Live Performance Archive</h3>
+                    <p>Collection of live sets from festivals and venues around the world.</p>
+                    <a href="#">View Gallery →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GETMUSIC RECORDS PAGE -->
+    <div id="label" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h2>GETMUSIC RECORDS</h2>
+            </div>
+            <div class="label-content">
+                <div class="label-logo">🎵</div>
+                <p>GetMusic Records is an independent record label founded and operated by Joshua Chinedu, dedicated to releasing cutting-edge Christian, Afrobeats, and R&B music from unique global artists. The label serves as a platform for innovative sounds that push boundaries while maintaining artistic integrity and cultural authenticity.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- COLLABORATIONS PAGE -->
+    <div id="collaborations" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h2>COLLABORATIONS</h2>
+                <p>Cross-Industry Partnerships & Projects</p>
+            </div>
+            <div class="collab-grid">
+                <div class="collab-category">
+                    <h3>Fashion Brands</h3>
+                    <div class="collab-list">
+                        <div class="collab-item">Nike</div>
+                        <div class="collab-item">Adidas</div>
+                        <div class="collab-item">Puma</div>
+                        <div class="collab-item">Louis Vuitton</div>
+                        <div class="collab-item">Gucci</div>
+                    </div>
+                </div>
+                <div class="collab-category">
+                    <h3>Film & Movie Productions</h3>
+                    <div class="collab-list">
+                        <div class="collab-item">Netflix Originals</div>
+                        <div class="collab-item">Amazon Studios</div>
+                        <div class="collab-item">Universal Pictures</div>
+                        <div class="collab-item">Warner Bros</div>
+                    </div>
+                </div>
+                <div class="collab-category">
+                    <h3>Music Brands</h3>
+                    <div class="collab-list">
+                        <div class="collab-item">Native Instruments</div>
+                        <div class="collab-item">Ableton</div>
+                        <div class="collab-item">Roland</div>
+                        <div class="collab-item">Korg</div>
+                        <div class="collab-item">Yamaha</div>
+                    </div>
+                </div>
+                <div class="collab-category">
+                    <h3>Music Conferences</h3>
+                    <div class="collab-list">
+                        <div class="collab-item">ADE Amsterdam</div>
+                        <div class="collab-item">SXSW Austin</div>
+                        <div class="collab-item">Music Matters</div>
+                        <div class="collab-item">IMS Ibiza</div>
+                    </div>
+                </div>
+                <div class="collab-category">
+                    <h3>Industry Executives</h3>
+                    <div class="collab-list">
+                        <div class="collab-item">A&R Partnerships</div>
+                        <div class="collab-item">Label Collaborations</div>
+                        <div class="collab-item">Publishing Deals</div>
+                    </div>
+                </div>
+                <div class="collab-category">
+                    <h3>Social Media Collaborations</h3>
+                    <div class="collab-list">
+                        <div class="collab-item">Instagram Creator</div>
+                        <div class="collab-item">TikTok Partner</div>
+                        <div class="collab-item">YouTube Artist</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BRANDS PAGE -->
+    <div id="brands" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h2>BRANDS</h2>
+                <p>Partners & Endorsements</p>
+            </div>
+            <div class="brand-grid">
+                <div class="brand-item">Nike</div>
+                <div class="brand-item">Adidas</div>
+                <div class="brand-item">Ableton</div>
+                <div class="brand-item">Native Instruments</div>
+                <div class="brand-item">Roland</div>
+                <div class="brand-item">Sony</div>
+                <div class="brand-item">Universal</div>
+                <div class="brand-item">Warner</div>
+                <div class="brand-item">Netflix</div>
+                <div class="brand-item">Amazon</div>
+                <div class="brand-item">Apple</div>
+                <div class="brand-item">Spotify</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MERCHANDISE PAGE -->
+    <div id="merchandise" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h2>MERCHANDISE</h2>
+                <p>Official Joshua Chinedu Merch</p>
+            </div>
+            <div class="merch-grid">
+                <div class="merch-card">
+                    <div class="merch-image">👕</div>
+                    <div class="merch-info">
+                        <div class="merch-title">JC Signature T-Shirt</div>
+                        <div class="merch-price">$35</div>
+                        <a href="https://amazon.com" target="_blank" class="btn btn-primary" style="width: 100%;">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="merch-card">
+                    <div class="merch-image">🧢</div>
+                    <div class="merch-info">
+                        <div class="merch-title">Producer Cap</div>
+                        <div class="merch-price">$28</div>
+                        <a href="https://amazon.com" target="_blank" class="btn btn-primary" style="width: 100%;">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="merch-card">
+                    <div class="merch-image">👟</div>
+                    <div class="merch-info">
+                        <div class="merch-title">Limited Edition Hoodie</div>
+                        <div class="merch-price">$65</div>
+                        <a href="https://amazon.com" target="_blank" class="btn btn-primary" style="width: 100%;">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="merch-card">
+                    <div class="merch-image">🎒</div>
+                    <div class="merch-info">
+                        <div class="merch-title">Producer Backpack</div>
+                        <div class="merch-price">$55</div>
+                        <a href="https://amazon.com" target="_blank" class="btn btn-primary" style="width: 100%;">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="store-cta">
+                <a href="https://joshuamerch.com" target="_blank" class="btn btn-secondary" style="font-size: 1.2rem; padding: 1.5rem 3rem;">Go to Full Store →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- LEARN PAGE -->
+    <div id="learn" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h2>LEARN</h2>
+                <p>Music Production & Piano Courses</p>
+            </div>
+            <div class="learn-tabs">
+                <button class="tab-btn active" onclick="switchTab('production')">Music Production</button>
+                <button class="tab-btn" onclick="switchTab('piano')">Piano</button>
+            </div>
+            <div id="production-tab" class="tab-content active">
+                <div class="course-grid">
+                    <div class="course-card">
+                        <h4>Music Theory Fundamentals</h4>
+                        <ul>
+                            <li><a href="#">Introduction to Scales</a></li>
+                            <li><a href="#">Chord Progressions</a></li>
+                            <li><a href="#">Melody Writing</a></li>
+                            <li><a href="#">Harmonic Analysis</a></li>
+                        </ul>
+                    </div>
+                    <div class="course-card">
+                        <h4>Ableton Production Course</h4>
+                        <ul>
+                            <li><a href="https://youtube.com" target="_blank">Getting Started with Ableton</a></li>
+                            <li><a href="https://youtube.com" target="_blank">MIDI & Audio Production</a></li>
+                            <li><a href="https://youtube.com" target="_blank">Mixing & Mastering</a></li>
+                            <li><a href="https://youtube.com" target="_blank">Advanced Sound Design</a></li>
+                        </ul>
+                    </div>
+                    <div class="course-card">
+                        <h4>Ableton Templates</h4>
+                        <ul>
+                            <li><a href="#">Afrobeats Template (Download)</a></li>
+                            <li><a href="#">R&B Template (Download)</a></li>
+                            <li><a href="#">Electronic Template (Download)</a></li>
+                            <li><a href="#">Gospel Template (Download)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="piano-tab" class="tab-content">
+                <div class="course-grid">
+                    <div class="course-card">
+                        <h4>Piano Theory</h4>
+                        <ul>
+                            <li><a href="#">Piano Fundamentals</a></li>
+                            <li><a href="#">Reading Sheet Music</a></li>
+                            <li><a href="#">Chord Voicings</a></li>
+                            <li><a href="#">Improvisation Basics</a></li>
+                        </ul>
+                    </div>
+                    <div class="course-card">
+                        <h4>Video Lessons</h4>
+                        <ul>
+                            <li><a href="https://youtube.com" target="_blank">Beginner Piano Course</a></li>
+                            <li><a href="https://youtube.com" target="_blank">Intermediate Techniques</a></li>
+                            <li><a href="https://youtube.com" target="_blank">Advanced Performance</a></li>
+                            <li><a href="https://youtube.com" target="_blank">Gospel Piano Styles</a></li>
+                        </ul>
+                    </div>
+                    <div class="course-card">
+                        <h4>Resources & PDFs</h4>
+                        <ul>
+                            <li><a href="https://drive.google.com" target="_blank">Piano Chord Chart</a></li>
+                            <li><a href="https://drive.google.com" target="_blank">Scale Practice Sheets</a></li>
+                            <li><a href="https://drive.google.com" target="_blank">Song Arrangements</a></li>
+                            <li><a href="https://drive.google.com" target="_blank">Practice Exercises</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h2>CONTACT</h2>
+                <p>Get In Touch</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-section">
+                    <h3>Social Media</h3>
+                    <div class="contact-socials">
+                        <a href="https://instagram.com" target="_blank" class="contact-social">◉</a>
+                        <a href="https://facebook.com" target="_blank" class="contact-social">f</a>
+                        <a href="https://soundcloud.com" target="_blank" class="contact-social">☁</a>
+                        <a href="https://ra.co" target="_blank" class="contact-social">RA</a>
+                        <a href="https://discogs.com" target="_blank" class="contact-social">◆</a>
+                    </div>
+                </div>
+                <div class="contact-section">
+                    <h3>Business Inquiries</h3>
+                    <div class="contact-item">
+                        <div class="contact-label">Business</div>
+                        <div class="contact-value"><a href="/cdn-cgi/l/email-protection#345641475d5a514747745e5b475c4155575c5d5a5150411a575b59"><span class="__cf_email__" data-cfemail="6e0c1b1d07000b1d1d2e04011d061b0f0d0607000b0a1b400d0103">[email&#160;protected]</span></a></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">Management</div>
+                        <div class="contact-value"><a href="/cdn-cgi/l/email-protection#f79a96999690929a929983b794989a8796998e93989a969e99d994989a"><span class="__cf_email__" data-cfemail="701d111e1117151d151e0430131f1d00111e09141f1d11191e5e131f1d">[email&#160;protected]</span></a></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">Booking</div>
+                        <div class="contact-value"><a href="/cdn-cgi/l/email-protection#b6dcd9c5dec3d7d5dedfd8d3d2c3f6d5d9dbc6d7d8cfd2d9dbd7dfd898d5d9db"><span class="__cf_email__" data-cfemail="d4bebba7bca1b5b7bcbdbab1b0a194b7bbb9a4b5baadb0bbb9b5bdbafab7bbb9">[email&#160;protected]</span></a></div>
+                    </div>
+                </div>
+                <div class="contact-section">
+                    <h3>Media & Label</h3>
+                    <div class="contact-item">
+                        <div class="contact-label">Press</div>
+                        <div class="contact-value"><a href="/cdn-cgi/l/email-protection#f59492909b968cb59492909b968c919a98949c9bdb969a98"><span class="__cf_email__" data-cfemail="94f5f3f1faf7edd4f5f3f1faf7edf0fbf9f5fdfabaf7fbf9">[email&#160;protected]</span></a></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">Label</div>
+                        <div class="contact-value"><a href="/cdn-cgi/l/email-protection#ee84819d869b8f9c8b8d819c8a9dae89838f8782c08d8183"><span class="__cf_email__" data-cfemail="4e24213d263b2f3c2b2d213c2a3d0e29232f2722602d2123">[email&#160;protected]</span></a></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">Sync / Licensing</div>
+                        <div class="contact-value"><a href="/cdn-cgi/l/email-protection#abc3cec7c7c4ebc2c5d9cecac785c7c2cdce"><span class="__cf_email__" data-cfemail="91f9f4fdfdfed1f8ffe3f4f0fdbffdf8f7f4">[email&#160;protected]</span></a></div>
+                    </div>
+                </div>
+                <div class="contact-section">
+                    <h3>Direct Contact</h3>
+                    <div class="contact-item">
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value"><a href="/cdn-cgi/l/email-protection#e2888d918a978386838091a2858f838b8ecc818d8f"><span class="__cf_email__" data-cfemail="3a505549524f5b5e5b58497a5d575b535614595557">[email&#160;protected]</span></a></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">Phone</div>
+                        <div class="contact-value">+234 (810) 649-0399</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Joshua Chinedu</h4>
+                    <p>Globally recognized music producer, composer, and sound designer. Founder of GetMusic Records.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" data-page="about">About</a></li>
+                        <li><a href="#" data-page="music">Music</a></li>
+                        <li><a href="#" data-page="tours">Tours</a></li>
+                        <li><a href="#" data-page="contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Business</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" data-page="label">GetMusic Records</a></li>
+                        <li><a href="#" data-page="merchandise">Merchandise</a></li>
+                        <li><a href="#" data-page="learn">Learn</a></li>
+                        <li><a href="#" data-page="collaborations">Collaborations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+                        <li><a href="https://youtube.com" target="_blank">YouTube</a></li>
+                        <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+                        <li><a href="https://soundcloud.com" target="_blank">SoundCloud</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © 2026 Joshua Chinedu. All Rights Reserved.
+                </div>
+                <div class="footer-legal">
+                    <a href="#" onclick="alert('Privacy Policy page - Content to be added'); return false;">Privacy Policy</a>
+                    <a href="#" onclick="alert('Terms of Service page - Content to be added'); return false;">Terms of Service</a>
+                    <a href="#" onclick="alert('Cookie Policy page - Content to be added'); return false;">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Page Navigation
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+                window.scrollTo(0, 0);
+            }
+            
+            // Close mobile menu if open
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('active');
+        }
+
+        // Add click handlers to all navigation links
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('[data-page]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageId = this.getAttribute('data-page');
+                    showPage(pageId);
+                });
+            });
+        });
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Learn Page Tabs
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName + '-tab').classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
