@@ -1259,6 +1259,190 @@
                 justify-content: center;
             }
         }
+
+        /* ==========================================
+   SERVICES SECTION - ADD TO EXISTING <style> SECTION
+   ========================================== */
+
+/* Services Accordion Container */
+.services-accordion {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Individual Service Item */
+.service-item {
+    background: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.service-item:hover {
+    border-color: rgba(0, 217, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 217, 255, 0.1);
+}
+
+/* Service Header (Clickable) */
+.service-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.3s ease;
+}
+
+.service-header:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.service-header:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: -2px;
+}
+
+.service-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.service-icon {
+    font-size: 1.8rem;
+    min-width: 2rem;
+}
+
+.service-toggle {
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    transition: transform 0.3s ease;
+}
+
+.service-item.active .service-toggle {
+    transform: rotate(180deg);
+}
+
+/* Service Content (Expandable) */
+.service-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.service-item.active .service-content {
+    max-height: 1000px;
+}
+
+.service-content-inner {
+    padding: 0 2rem 2rem 2rem;
+}
+
+.service-description {
+    color: var(--color-text-dim);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+/* CTA Buttons Container */
+.service-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* CTA Button Styles */
+.cta-btn {
+    padding: 0.9rem 1.8rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid var(--color-accent);
+    background: transparent;
+    color: var(--color-accent);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--color-accent);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.cta-btn:hover::before {
+    left: 0;
+}
+
+.cta-btn:hover {
+    color: var(--color-bg);
+    box-shadow: 0 0 20px var(--color-accent-glow);
+}
+
+.cta-btn:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* Primary CTA variant */
+.cta-btn.primary {
+    background: var(--color-accent);
+    color: var(--color-bg);
+}
+
+.cta-btn.primary::before {
+    background: transparent;
+}
+
+.cta-btn.primary:hover {
+    background: transparent;
+    color: var(--color-accent);
+}
+
+/* Mobile Responsive for Services */
+@media (max-width: 768px) {
+    .service-header {
+        padding: 1.2rem 1.5rem;
+    }
+
+    .service-title {
+        font-size: 1.1rem;
+    }
+
+    .service-content-inner {
+        padding: 0 1.5rem 1.5rem 1.5rem;
+    }
+
+    .service-ctas {
+        flex-direction: column;
+    }
+
+    .cta-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -1270,6 +1454,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#" data-page="home">Home</a></li>
                 <li><a href="#" data-page="about">About</a></li>
+                <li><a href="#" data-page="services">Services</a></li>
                 <li><a href="#" data-page="music">Music</a></li>
                 <li><a href="#" data-page="videos">Videos</a></li>
                 <li><a href="#" data-page="tours">Tours</a></li>
@@ -1292,11 +1477,16 @@
             <div class="hero-content">
                 <h1>JOSHUA CHINEDU</h1>
                 <p class="hero-subtitle"><strong>Cross-Border Music Producer</strong></p>
+
+
                 <div class="hero-ctas">
                     <a href="#" class="btn btn-primary" data-page="music">Listen</a>
+                    <button class="btn btn-secondary" onclick="scrollToServices()">Services</button>
                     <a href="#" class="btn btn-secondary" data-page="videos">Watch</a>
                     <a href="#" class="btn btn-secondary" data-page="contact">Contact</a>
                 </div>
+
+
                 <div class="social-grid">
                     <a href="https://youtube.com" target="_blank" class="social-item">
                         <span class="social-icon">▶</span>
@@ -1365,6 +1555,473 @@
             </div>
         </div>
     </div>
+
+<!-- ==========================================
+     SERVICES PAGE - NEW SECTION
+     ========================================== -->
+<div id="services" class="page">
+    <div class="container">
+        <div class="page-header">
+            <h2>SERVICES</h2>
+            <p>Professional Music Production & Sound Design</p>
+        </div>
+
+        <div class="services-accordion">
+            
+            <!-- Service 1: Music Production -->
+            <div class="service-item" 
+                 data-service="Music Production"
+                 role="region"
+                 aria-labelledby="service-music-production">
+                <div class="service-header" 
+                     id="service-music-production"
+                     tabindex="0" 
+                     role="button"
+                     aria-expanded="false"
+                     aria-controls="content-music-production">
+                    <div class="service-title">
+                        <span class="service-icon">🎛️</span>
+                        <span>Music Production</span>
+                    </div>
+                    <span class="service-toggle">▼</span>
+                </div>
+                <div class="service-content" id="content-music-production">
+                    <div class="service-content-inner">
+                        <p class="service-description">
+                            Full-scale music production services from concept to final master. Whether you need custom beats, original compositions, or complete track production, I bring your musical vision to life with professional-grade quality and creative excellence.
+                        </p>
+                        <div class="service-ctas">
+                            <a href="#contact" 
+                               class="cta-btn primary" 
+                               data-cta="Get a Custom Beat"
+                               data-service="Music Production">
+                                Get a Custom Beat
+                            </a>
+                            <a href="#contact" 
+                               class="cta-btn" 
+                               data-cta="Start a Project"
+                               data-service="Music Production">
+                                Start a Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 2: Mixing & Editing -->
+            <div class="service-item" 
+                 data-service="Mixing & Editing"
+                 role="region"
+                 aria-labelledby="service-mixing">
+                <div class="service-header" 
+                     id="service-mixing"
+                     tabindex="0" 
+                     role="button"
+                     aria-expanded="false"
+                     aria-controls="content-mixing">
+                    <div class="service-title">
+                        <span class="service-icon">🎚️</span>
+                        <span>Mixing & Editing</span>
+                    </div>
+                    <span class="service-toggle">▼</span>
+                </div>
+                <div class="service-content" id="content-mixing">
+                    <div class="service-content-inner">
+                        <p class="service-description">
+                            Professional mixing and editing services that bring clarity, depth, and polish to your recordings. Using industry-standard tools and techniques, I ensure your tracks sound balanced, dynamic, and radio-ready across all playback systems.
+                        </p>
+                        <div class="service-ctas">
+                            <a href="#contact" 
+                               class="cta-btn primary" 
+                               data-cta="Request a Quote"
+                               data-service="Mixing & Editing">
+                                Request a Quote
+                            </a>
+                            <a href="#booking" 
+                               class="cta-btn" 
+                               data-cta="Book a Session"
+                               data-service="Mixing & Editing">
+                                Book a Session
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 3: Mastering -->
+            <div class="service-item" 
+                 data-service="Mastering (Light to Moderate)"
+                 role="region"
+                 aria-labelledby="service-mastering">
+                <div class="service-header" 
+                     id="service-mastering"
+                     tabindex="0" 
+                     role="button"
+                     aria-expanded="false"
+                     aria-controls="content-mastering">
+                    <div class="service-title">
+                        <span class="service-icon">🔊</span>
+                        <span>Mastering (Light to Moderate)</span>
+                    </div>
+                    <span class="service-toggle">▼</span>
+                </div>
+                <div class="service-content" id="content-mastering">
+                    <div class="service-content-inner">
+                        <p class="service-description">
+                            Light to moderate mastering services that add the final professional sheen to your mixed tracks. I optimize your music for streaming platforms, digital distribution, and physical media while maintaining the artistic integrity of your sound.
+                        </p>
+                        <div class="service-ctas">
+                            <a href="#contact" 
+                               class="cta-btn primary" 
+                               data-cta="Upload Your Track"
+                               data-service="Mastering (Light to Moderate)">
+                                Upload Your Track
+                            </a>
+                            <a href="#contact" 
+                               class="cta-btn" 
+                               data-cta="Request a Quote"
+                               data-service="Mastering (Light to Moderate)">
+                                Request a Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 4: Vocal Recording -->
+            <div class="service-item" 
+                 data-service="Vocal Recording"
+                 role="region"
+                 aria-labelledby="service-vocal">
+                <div class="service-header" 
+                     id="service-vocal"
+                     tabindex="0" 
+                     role="button"
+                     aria-expanded="false"
+                     aria-controls="content-vocal">
+                    <div class="service-title">
+                        <span class="service-icon">🎤</span>
+                        <span>Vocal Recording</span>
+                    </div>
+                    <span class="service-toggle">▼</span>
+                </div>
+                <div class="service-content" id="content-vocal">
+                    <div class="service-content-inner">
+                        <p class="service-description">
+                            Professional vocal recording in a treated acoustic environment with high-end microphones and preamps. I provide vocal direction, comping, tuning, and processing to capture your best performance and achieve studio-quality results.
+                        </p>
+                        <div class="service-ctas">
+                            <a href="#booking" 
+                               class="cta-btn primary" 
+                               data-cta="Book a Session"
+                               data-service="Vocal Recording">
+                                Book a Session
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 5: Songwriting & Arrangement -->
+            <div class="service-item" 
+                 data-service="Songwriting & Arrangement"
+                 role="region"
+                 aria-labelledby="service-songwriting">
+                <div class="service-header" 
+                     id="service-songwriting"
+                     tabindex="0" 
+                     role="button"
+                     aria-expanded="false"
+                     aria-controls="content-songwriting">
+                    <div class="service-title">
+                        <span class="service-icon">🎼</span>
+                        <span>Songwriting & Arrangement</span>
+                    </div>
+                    <span class="service-toggle">▼</span>
+                </div>
+                <div class="service-content" id="content-songwriting">
+                    <div class="service-content-inner">
+                        <p class="service-description">
+                            Collaborative songwriting and arrangement services to help develop your musical ideas into complete, polished compositions. From melody and lyrics to harmonic progressions and instrumentation, I work with you to craft compelling songs that resonate.
+                        </p>
+                        <div class="service-ctas">
+                            <a href="#contact" 
+                               class="cta-btn primary" 
+                               data-cta="Start a Project"
+                               data-service="Songwriting & Arrangement">
+                                Start a Project
+                            </a>
+                            <a href="mailto:hello@joshuachinedu.com" 
+                               class="cta-btn" 
+                               data-cta="Talk to Me"
+                               data-service="Songwriting & Arrangement">
+                                Talk to Me
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 6: Remote Production -->
+            <div class="service-item" 
+                 data-service="Remote Production"
+                 role="region"
+                 aria-labelledby="service-remote">
+                <div class="service-header" 
+                     id="service-remote"
+                     tabindex="0" 
+                     role="button"
+                     aria-expanded="false"
+                     aria-controls="content-remote">
+                    <div class="service-title">
+                        <span class="service-icon">🌍</span>
+                        <span>Remote Production</span>
+                    </div>
+                    <span class="service-toggle">▼</span>
+                </div>
+                <div class="service-content" id="content-remote">
+                    <div class="service-content-inner">
+                        <p class="service-description">
+                            Work with me from anywhere in the world. Remote production services include file exchange, real-time collaboration, and virtual sessions. Distance is no barrier to creating great music together with professional workflows and seamless communication.
+                        </p>
+                        <div class="service-ctas">
+                            <a href="#contact" 
+                               class="cta-btn primary" 
+                               data-cta="Start a Remote Project"
+                               data-service="Remote Production">
+                                Start a Remote Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 7: Session Musician Services -->
+            <div class="service-item" 
+                 data-service="Session Musician Services"
+                 role="region"
+                 aria-labelledby="service-session">
+                <div class="service-header" 
+                     id="service-session"
+                     tabindex="0" 
+                     role="button"
+                     aria-expanded="false"
+                     aria-controls="content-session">
+                    <div class="service-title">
+                        <span class="service-icon">🎧</span>
+                        <span>Session Musician Services</span>
+                    </div>
+                    <span class="service-toggle">▼</span>
+                </div>
+                <div class="service-content" id="content-session">
+                    <div class="service-content-inner">
+                        <p class="service-description">
+                            Professional session work on keyboards, piano, and various electronic instruments. I bring musicality, precision, and versatility to your projects, whether you need melodic elements, harmonic support, or textural layers to enhance your production.
+                        </p>
+                        <div class="service-ctas">
+                            <a href="#contact" 
+                               class="cta-btn primary" 
+                               data-cta="Request a Quote"
+                               data-service="Session Musician Services">
+                                Request a Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 8: Music for Media & Commercial -->
+            <div class="service-item" 
+                 data-service="Music for Media & Commercial"
+                 role="region"
+                 aria-labelledby="service-media">
+                <div class="service-header" 
+                     id="service-media"
+                     tabindex="0" 
+                     role="button"
+                     aria-expanded="false"
+                     aria-controls="content-media">
+                    <div class="service-title">
+                        <span class="service-icon">🎥</span>
+                        <span>Music for Media & Commercial</span>
+                    </div>
+                    <span class="service-toggle">▼</span>
+                </div>
+                <div class="service-content" id="content-media">
+                    <div class="service-content-inner">
+                        <p class="service-description">
+                            Custom music composition for film, television, advertising, video games, and digital content. I create original scores and sonic branding that amplify your visual storytelling and connect emotionally with your audience.
+                        </p>
+                        <div class="service-ctas">
+                            <a href="#contact" 
+                               class="cta-btn primary" 
+                               data-cta="Request a Quote"
+                               data-service="Music for Media & Commercial">
+                                Request a Quote
+                            </a>
+                            <a href="mailto:hello@joshuachinedu.com" 
+                               class="cta-btn" 
+                               data-cta="Talk to Me"
+                               data-service="Music for Media & Commercial">
+                                Talk to Me
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 9: Social Media Audio -->
+            <div class="service-item" 
+                 data-service="Social Media Audio"
+                 role="region"
+                 aria-labelledby="service-social">
+                <div class="service-header" 
+                     id="service-social"
+                     tabindex="0" 
+                     role="button"
+                     aria-expanded="false"
+                     aria-controls="content-social">
+                    <div class="service-title">
+                        <span class="service-icon">📱</span>
+                        <span>Social Media Audio</span>
+                    </div>
+                    <span class="service-toggle">▼</span>
+                </div>
+                <div class="service-content" id="content-social">
+                    <div class="service-content-inner">
+                        <p class="service-description">
+                            Optimized audio content for social media platforms including TikTok, Instagram Reels, YouTube Shorts, and more. Short-form music, sound effects, and audio branding designed to capture attention and maximize engagement in the social media landscape.
+                        </p>
+                        <div class="service-ctas">
+                            <a href="#contact" 
+                               class="cta-btn primary" 
+                               data-cta="Create a Sound"
+                               data-service="Social Media Audio">
+                                Create a Sound
+                            </a>
+                            <a href="#contact" 
+                               class="cta-btn" 
+                               data-cta="Request a Quote"
+                               data-service="Social Media Audio">
+                                Request a Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 10: Music Coaching -->
+            <div class="service-item" 
+                 data-service="Music Coaching"
+                 role="region"
+                 aria-labelledby="service-coaching">
+                <div class="service-header" 
+                     id="service-coaching"
+                     tabindex="0" 
+                     role="button"
+                     aria-expanded="false"
+                     aria-controls="content-coaching">
+                    <div class="service-title">
+                        <span class="service-icon">🧠</span>
+                        <span>Music Coaching</span>
+                    </div>
+                    <span class="service-toggle">▼</span>
+                </div>
+                <div class="service-content" id="content-coaching">
+                    <div class="service-content-inner">
+                        <p class="service-description">
+                            One-on-one music production coaching and mentorship for aspiring producers and artists. Learn production techniques, workflow optimization, creative strategies, and industry insights from personalized sessions tailored to your skill level and goals.
+                        </p>
+                        <div class="service-ctas">
+                            <a href="#booking" 
+                               class="cta-btn primary" 
+                               data-cta="Book Coaching"
+                               data-service="Music Coaching">
+                                Book Coaching
+                            </a>
+                            <a href="mailto:hello@joshuachinedu.com" 
+                               class="cta-btn" 
+                               data-cta="Talk to Me"
+                               data-service="Music Coaching">
+                                Talk to Me
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 11: Demo & A&R Prep -->
+            <div class="service-item" 
+                 data-service="Demo & A&R Prep"
+                 role="region"
+                 aria-labelledby="service-demo">
+                <div class="service-header" 
+                     id="service-demo"
+                     tabindex="0" 
+                     role="button"
+                     aria-expanded="false"
+                     aria-controls="content-demo">
+                    <div class="service-title">
+                        <span class="service-icon">🎶</span>
+                        <span>Demo & A&R Prep</span>
+                    </div>
+                    <span class="service-toggle">▼</span>
+                </div>
+                <div class="service-content" id="content-demo">
+                    <div class="service-content-inner">
+                        <p class="service-description">
+                            Professional demo production and A&R preparation services to help you showcase your music to labels, publishers, and industry gatekeepers. I'll help you create compelling demos that stand out and get your music heard by the right people.
+                        </p>
+                        <div class="service-ctas">
+                            <a href="#contact" 
+                               class="cta-btn primary" 
+                               data-cta="Submit Your Demo"
+                               data-service="Demo & A&R Prep">
+                                Submit Your Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 12: Add-On Services -->
+            <div class="service-item" 
+                 data-service="Add-On Services"
+                 role="region"
+                 aria-labelledby="service-addon">
+                <div class="service-header" 
+                     id="service-addon"
+                     tabindex="0" 
+                     role="button"
+                     aria-expanded="false"
+                     aria-controls="content-addon">
+                    <div class="service-title">
+                        <span class="service-icon">➕</span>
+                        <span>Add-On Services</span>
+                    </div>
+                    <span class="service-toggle">▼</span>
+                </div>
+                <div class="service-content" id="content-addon">
+                    <div class="service-content-inner">
+                        <p class="service-description">
+                            Complementary services including vocal tuning, advanced sound design, stem mastering, alternative mixes, instrumental versions, and more. Enhance any project with specialized add-ons tailored to your specific needs and creative vision.
+                        </p>
+                        <div class="service-ctas">
+                            <a href="#contact" 
+                               class="cta-btn primary" 
+                               data-cta="Add to My Project"
+                               data-service="Add-On Services">
+                                Add to My Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- ========================================== -->
 
     <!-- MUSIC PAGE -->
     <div id="music" class="page">
@@ -1829,6 +2486,7 @@
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="#" data-page="about">About</a></li>
+                        <li><a href="#" data-page="services">Services</a></li>
                         <li><a href="#" data-page="music">Music</a></li>
                         <li><a href="#" data-page="tours">Tours</a></li>
                         <li><a href="#" data-page="contact">Contact</a></li>
@@ -1867,6 +2525,208 @@
     </footer>
 
     <script>
+
+        /* ==========================================
+   ANALYTICS TRACKING SYSTEM
+   ========================================== */
+
+/**
+ * CENTRALIZED EVENT TRACKING FUNCTION
+ * 
+ * This is a platform-agnostic event dispatcher that can be connected to:
+ * - Google Analytics (gtag or ga)
+ * - Google Tag Manager (dataLayer.push)
+ * - Meta Pixel (fbq)
+ * - Custom backend API
+ * - Any other analytics platform
+ * 
+ * To integrate with your analytics platform:
+ * 1. Uncomment the relevant section below
+ * 2. Add your tracking ID/configuration
+ * 3. Deploy your changes
+ */
+function trackEvent(eventName, payload) {
+    // Add timestamp to all events
+    const eventData = {
+        ...payload,
+        timestamp: new Date().toISOString(),
+        page_url: window.location.href
+    };
+    
+    // Console logging for development/debugging
+    console.log('[Analytics Event]', eventName, eventData);
+    
+    // ============================================
+    // INTEGRATION EXAMPLES - UNCOMMENT TO USE
+    // ============================================
+    
+    /* 
+    // Google Analytics 4 (gtag.js)
+    if (typeof gtag !== 'undefined') {
+        gtag('event', eventName, eventData);
+    }
+    */
+    
+    /*
+    // Google Tag Manager
+    if (typeof window.dataLayer !== 'undefined') {
+        window.dataLayer.push({
+            'event': eventName,
+            ...eventData
+        });
+    }
+    */
+    
+    /*
+    // Meta Pixel (Facebook)
+    if (typeof fbq !== 'undefined') {
+        fbq('trackCustom', eventName, eventData);
+    }
+    */
+    
+    /*
+    // Custom Backend API
+    fetch('/api/analytics/track', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            event: eventName,
+            data: eventData
+        })
+    }).catch(err => console.error('Analytics error:', err));
+    */
+    
+    /*
+    // Plausible Analytics
+    if (typeof plausible !== 'undefined') {
+        plausible(eventName, { props: eventData });
+    }
+    */
+}
+
+/* ==========================================
+   SERVICES ACCORDION FUNCTIONALITY
+   ========================================== */
+
+// Initialize accordion on page load
+document.addEventListener('DOMContentLoaded', function() {
+    initializeServicesAccordion();
+});
+
+function initializeServicesAccordion() {
+    const serviceItems = document.querySelectorAll('.service-item');
+    
+    serviceItems.forEach(item => {
+        const header = item.querySelector('.service-header');
+        const serviceName = item.getAttribute('data-service');
+        
+        // Click event for accordion toggle
+        header.addEventListener('click', function() {
+            toggleServiceItem(item, serviceName);
+        });
+        
+        // Keyboard accessibility (Enter and Space keys)
+        header.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleServiceItem(item, serviceName);
+            }
+        });
+    });
+    
+    // Initialize CTA tracking
+    initializeCTATracking();
+}
+
+function toggleServiceItem(item, serviceName) {
+    const isCurrentlyActive = item.classList.contains('active');
+    const header = item.querySelector('.service-header');
+    
+    // Close all other service items (only one open at a time)
+    document.querySelectorAll('.service-item').forEach(otherItem => {
+        if (otherItem !== item && otherItem.classList.contains('active')) {
+            const otherServiceName = otherItem.getAttribute('data-service');
+            otherItem.classList.remove('active');
+            const otherHeader = otherItem.querySelector('.service-header');
+            otherHeader.setAttribute('aria-expanded', 'false');
+            
+            // Track accordion close event
+            trackEvent('accordion_close', {
+                event_category: 'services',
+                event_action: 'accordion_close',
+                service_name: otherServiceName
+            });
+        }
+    });
+    
+    // Toggle current item
+    if (isCurrentlyActive) {
+        // Close current item
+        item.classList.remove('active');
+        header.setAttribute('aria-expanded', 'false');
+        
+        // Track accordion close event
+        trackEvent('accordion_close', {
+            event_category: 'services',
+            event_action: 'accordion_close',
+            service_name: serviceName
+        });
+    } else {
+        // Open current item
+        item.classList.add('active');
+        header.setAttribute('aria-expanded', 'true');
+        
+        // Track accordion open event
+        trackEvent('accordion_open', {
+            event_category: 'services',
+            event_action: 'accordion_open',
+            service_name: serviceName
+        });
+    }
+}
+
+/* ==========================================
+   CTA BUTTON TRACKING
+   ========================================== */
+
+function initializeCTATracking() {
+    const ctaButtons = document.querySelectorAll('.cta-btn');
+    
+    ctaButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            const ctaLabel = this.getAttribute('data-cta');
+            const serviceName = this.getAttribute('data-service');
+            const ctaHref = this.getAttribute('href');
+            
+            // Track CTA click event
+            trackEvent('cta_click', {
+                event_category: 'services',
+                event_action: 'cta_click',
+                service_name: serviceName,
+                cta_label: ctaLabel,
+                cta_destination: ctaHref
+            });
+        });
+    });
+}
+
+/* ==========================================
+   SERVICES BUTTON - SMOOTH SCROLL
+   ========================================== */
+
+function scrollToServices() {
+    // Track services button click
+    trackEvent('services_button_click', {
+        event_category: 'navigation',
+        event_action: 'services_button_click',
+        source: 'hero_section'
+    });
+    
+    // Navigate to services page
+    showPage('services');
+}
         // Page Navigation
         function showPage(pageId) {
             // Hide all pages
